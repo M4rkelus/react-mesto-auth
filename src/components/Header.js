@@ -4,8 +4,14 @@ import logo from "../images/logo.svg";
 
 const Header = ({ email, onSignOut, isLoggedIn }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
   const handleMenuBtnClick = () =>
     !isNavOpen ? setIsNavOpen(true) : setIsNavOpen(false);
+
+  const handleSignOutClick = () => {
+    onSignOut();
+    setIsNavOpen(false);
+  };
 
   return (
     <>
@@ -15,7 +21,7 @@ const Header = ({ email, onSignOut, isLoggedIn }) => {
           <NavLink
             to="/sign-in"
             className="header__link_mobile link"
-            onClick={onSignOut}
+            onClick={handleSignOutClick}
           >
             Выйти
           </NavLink>
