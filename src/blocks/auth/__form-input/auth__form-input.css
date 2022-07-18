@@ -1,0 +1,13 @@
+.auth__form-input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--color-input-underline-1);
+  margin-bottom: 22px;
+  background-color: var(--color-background-1);
+  height: 35px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: normal;
+  color: var(--color-text-1);
+}

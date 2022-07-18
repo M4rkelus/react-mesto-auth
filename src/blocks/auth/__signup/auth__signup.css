@@ -1,0 +1,15 @@
+.auth__signup {
+  font-style: normal;
+  font-family: var(--main-font);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+@media (max-width: 426px) {
+  .auth__signup {
+    margin-top: 20px;
+  }
+}

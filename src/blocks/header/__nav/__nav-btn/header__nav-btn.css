@@ -1,0 +1,21 @@
+.header__nav-btn {
+  display: none;
+  border: none;
+  margin-right: 10px;
+  background: no-repeat url(../../../../images/menu-btn.svg) center
+    center/contain;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header__nav-btn:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 426px) {
+  .header__nav-btn {
+    display: block;
+  }
+}

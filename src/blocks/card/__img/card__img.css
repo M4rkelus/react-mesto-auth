@@ -1,0 +1,13 @@
+.card__img {
+  display: block;
+  height: 282px;
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.card__img:hover {
+  cursor: pointer;
+}

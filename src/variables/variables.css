@@ -1,0 +1,11 @@
+:root {
+  --color-background-1: #000000;
+  --color-background-2: #545454;
+  --color-background-3: #ffffff;
+  --color-text-1: #ffffff;
+  --color-text-2: #000000;
+  --color-text-3: #545454;
+  --color-error: #ff0000;
+  --color-input-underline-1: #cccccc;
+  --main-font: "Inter", "Tahoma", sans-serif;
+}

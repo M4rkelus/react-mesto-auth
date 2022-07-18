@@ -1,0 +1,15 @@
+.header__user-email {
+  margin: 0;
+  font-style: normal;
+  font-family: var(--main-font);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+@media (max-width: 426px) {
+  .header__user-email {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

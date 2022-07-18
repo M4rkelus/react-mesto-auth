@@ -1,0 +1,19 @@
+.popup__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: var(--color-background-3);
+  max-width: 430px;
+  box-sizing: border-box;
+  padding: 60px 36px;
+  color: var(--color-text-2);
+  align-items: center;
+}
+
+@media (max-width: 575px) {
+  .popup__info {
+    max-width: 282px;
+    padding: 50px 18px;
+  }
+}

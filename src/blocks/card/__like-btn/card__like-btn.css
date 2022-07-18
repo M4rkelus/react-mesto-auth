@@ -1,0 +1,19 @@
+.card__like-btn {
+  flex-shrink: 0;
+  border: none;
+
+  background: no-repeat url(../../../images/like.svg) center center;
+  height: 19px;
+  width: 22px;
+  padding: 0;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+}
+
+.card__like-btn:hover {
+  opacity: 0.5;
+}
+
+.card__like-btn:active {
+  background: no-repeat url(../../../images/like-active.svg) center center;
+}

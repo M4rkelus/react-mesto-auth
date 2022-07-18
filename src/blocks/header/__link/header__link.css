@@ -1,0 +1,14 @@
+.header__link {
+  font-style: normal;
+  font-family: var(--main-font);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+@media (max-width: 426px) {
+  .header__link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

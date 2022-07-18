@@ -1,0 +1,87 @@
+/* Page styles */
+@import url(./vendor/normalize.css);
+
+@import url(./fonts/Inter/inter.css);
+
+@import url(./variables/variables.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/content/content.css);
+@import url(./blocks/link/link.css);
+@import url(./blocks/hidden/hidden.css);
+
+/* Header section */
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__nav/header__nav.css);
+@import url(./blocks/header/__nav/__nav-btn/header__nav-btn.css);
+@import url(./blocks/header/__nav/__nav-btn/_close/header__nav-btn_close.css);
+@import url(./blocks/header/__nav/_mobile/header__nav_mobile.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__link/_mobile/header__link_mobile.css);
+@import url(./blocks/header/__user-email/header__user-email.css);
+@import url(./blocks/header/__user-email/_mobile/header__user-email_mobile.css);
+
+/* Auth section */
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/__title/auth__title.css);
+@import url(./blocks/auth/__form/auth__form.css);
+@import url(./blocks/auth/__form-input/auth__form-input.css);
+@import url(./blocks/auth/__form-submit/auth__form-submit.css);
+@import url(./blocks/auth/__signup/auth__signup.css);
+
+/* Profile section */
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar-btn/profile__avatar-btn.css);
+@import url(./blocks/profile/__avatar-img/profile__avatar-img.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__title/profile__title.css);
+@import url(./blocks/profile/__subtitle/profile__subtitle.css);
+@import url(./blocks/profile/__edit-btn/profile__edit-btn.css);
+@import url(./blocks/profile/__add-btn/profile__add-btn.css);
+
+/* Elements section */
+@import url(./blocks/elements/elements.css);
+
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__img/card__img.css);
+@import url(./blocks/card/__caption/card__caption.css);
+@import url(./blocks/card/__title/card__title.css);
+@import url(./blocks/card/__like-grp/card__like-grp.css);
+@import url(./blocks/card/__like-counter/card__like-counter.css);
+@import url(./blocks/card/__like-btn/card__like-btn.css);
+@import url(./blocks/card/__like-btn/_active/card__like-btn_active.css);
+@import url(./blocks/card/__delete-btn/card__delete-btn.css);
+@import url(./blocks/card/__delete-btn/_visible/card__delete-btn_visible.css);
+@import url(./blocks/card/__delete-btn/_hidden/card__delete-btn_hidden.css);
+
+/* Footer section*/
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+/* Popup */
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__title/popup__title.css);
+@import url(./blocks/popup/__form/popup__form.css);
+@import url(./blocks/popup/__field/popup__field.css);
+@import url(./blocks/popup/__field/_type/popup__field_type_error.css);
+@import url(./blocks/popup/__save-btn/popup__save-btn.css);
+@import url(./blocks/popup/__save-btn/_inactive/popup__save-btn_inactive.css);
+@import url(./blocks/popup/__close-btn/popup__close-btn.css);
+@import url(./blocks/popup/__input-error/popup__input-error.css);
+@import url(./blocks/popup/__input-error/_active/popup__input-error_active.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+
+/* Preview */
+@import url(./blocks/popup/__wrapper/popup__wrapper.css);
+@import url(./blocks/popup/__figure/popup__figure.css);
+@import url(./blocks/popup/__caption/popup__caption.css);
+@import url(./blocks/popup/__img/popup__img.css);
+@import url(./blocks/popup/_preview/popup_preview.css);
+
+/* Info tooltip */
+@import url(./blocks/popup/__info/popup__info.css);
+@import url(./blocks/popup/__tooltip-img/popup__tooltip-img.css);
+@import url(./blocks/popup/__tooltip-img/_success/popup__img_success.css);
+@import url(./blocks/popup/__tooltip-img/_failure/popup__tooltip-img_failure.css);
+@import url(./blocks/popup/__tooltip-message/popup__tooltip-message.css);

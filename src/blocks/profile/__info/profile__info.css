@@ -1,0 +1,17 @@
+.profile__info {
+  display: grid;
+  grid-template-columns: minmax(-webkit-min-content, -webkit-max-content) -webkit-min-content;
+  grid-template-columns: minmax(min-content, max-content) min-content;
+  grid-template-rows: repeat(2, -webkit-min-content);
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "title edit-btn"
+    "subtitle subtitle";
+}
+
+@media (max-width: 768px) {
+  .profile__info {
+    margin-bottom: 33px;
+    justify-items: center;
+  }
+}

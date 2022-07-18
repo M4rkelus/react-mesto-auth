@@ -1,0 +1,11 @@
+.page {
+  position: relative;
+  margin: 0 auto;
+  background-color: var(--color-background-1);
+  min-height: 100vh;
+  min-width: 320px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  color: var(--color-text-1);
+}

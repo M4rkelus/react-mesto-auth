@@ -1,0 +1,12 @@
+.popup__field {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  height: 37px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  transition: border-bottom 0.3s ease-in-out;
+}

@@ -1,0 +1,18 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  margin: 26px auto;
+  min-height: 74.7vh;
+  max-width: 430px;
+  box-sizing: border-box;
+  padding: 34px 36px 37px;
+  cursor: auto;
+  min-width: 320px;
+}
+
+@media (max-width: 426px) {
+  .auth {
+    margin-top: 6px;
+    padding: 34px 30px 37px;
+  }
+}
