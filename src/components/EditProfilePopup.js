@@ -3,23 +3,27 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import PopupWithForm from "./PopupWithForm";
 
 const EditProfilePopup = ({ isOpen, onClose, onUpdateUser }) => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [values, setValues] = useState({});
   const currentUser = useContext(CurrentUserContext);
 
-  const handleNameChange = (e) => setName(e.target.value);
-  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onUpdateUser({
-      name,
-      about: description,
+      name: values.name,
+      about: values.description,
     });
   };
 
   useEffect(() => {
-    setName(currentUser.name);
-    setDescription(currentUser.about);
+    setValues({ name: currentUser.name, description: currentUser.about });
   }, [currentUser, isOpen]);
 
   return (
@@ -32,8 +36,8 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser }) => {
       buttonText="Сохранить"
     >
       <input
-        value={name ?? ""}
-        onChange={handleNameChange}
+        value={values.name ?? ""}
+        onChange={handleChange}
         id="name-input"
         className="popup__field popup__field_value_name"
         type="text"
@@ -45,12 +49,12 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser }) => {
       />
       <span className="popup__input-error name-input-error"></span>
       <input
-        value={description ?? ""}
-        onChange={handleDescriptionChange}
+        value={values.description ?? ""}
+        onChange={handleChange}
         id="job-input"
         className="popup__field popup__field_value_job"
         type="text"
-        name="job"
+        name="description"
         placeholder="Профессиональная деятельность"
         minLength="2"
         maxLength="200"

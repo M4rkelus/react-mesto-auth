@@ -2,19 +2,23 @@ import { useEffect, useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
-  const [name, setName] = useState("");
-  const [link, setLink] = useState("");
+  const [values, setValues] = useState({});
 
-  const handleNameChange = (e) => setName(e.target.value);
-  const handleLinkChange = (e) => setLink(e.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddPlace({ name, link });
+    onAddPlace({ name: values.name, link: values.link });
   };
 
   useEffect(() => {
-    setName("");
-    setLink("");
+    setValues({});
   }, [isOpen]);
 
   return (
@@ -27,8 +31,8 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
       buttonText="Создать"
     >
       <input
-        value={name ?? ""}
-        onChange={handleNameChange}
+        value={values.name ?? ""}
+        onChange={handleChange}
         id="card-name-input"
         className="popup__field popup__field_value_card-name"
         type="text"
@@ -40,8 +44,8 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
       />
       <span className="popup__input-error card-name-input-error"></span>
       <input
-        value={link ?? ""}
-        onChange={handleLinkChange}
+        value={values.link ?? ""}
+        onChange={handleChange}
         id="link-input"
         className="popup__field popup__field_value_card-link"
         type="url"

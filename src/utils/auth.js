@@ -29,14 +29,7 @@ export const login = (email, password) => {
       password,
       email,
     }),
-  })
-    .then(getResponse)
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem("jwt", data.token);
-        return data;
-      }
-    });
+  }).then(getResponse);
 };
 
 export const checkToken = (token) => {

@@ -1,20 +1,19 @@
 import { useState } from "react";
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [values, setValues] = useState({});
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin(email, password);
+    onLogin(values.email, values.password);
   };
 
   return (
@@ -27,8 +26,8 @@ const Login = ({ onLogin }) => {
           name="email"
           type="email"
           required
-          value={email || ""}
-          onChange={handleEmailChange}
+          value={values.email || ""}
+          onChange={handleChange}
           autoComplete="off"
         />
         <input
@@ -37,8 +36,8 @@ const Login = ({ onLogin }) => {
           name="password"
           type="password"
           required
-          value={password || ""}
-          onChange={handlePasswordChange}
+          value={values.password || ""}
+          onChange={handleChange}
           autoComplete="off"
         />
         <input

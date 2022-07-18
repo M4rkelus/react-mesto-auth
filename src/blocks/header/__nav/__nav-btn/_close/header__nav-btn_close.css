@@ -2,12 +2,11 @@
   display: none;
   border: none;
   margin-right: 10px;
-  background: no-repeat url(../../../../../images/menu-close-btn.svg) center
-    center/contain;
   height: 20px;
   width: 20px;
   padding: 0;
   cursor: pointer;
+  transition: background 0.2s ease-in-out;
 }
 
 .header__nav-btn_close:hover {
@@ -17,5 +16,7 @@
 @media (max-width: 426px) {
   .header__nav-btn_close {
     display: block;
+    background: no-repeat url(../../../../../images/menu-close-btn.svg) center
+      center/contain;
   }
 }

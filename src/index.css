@@ -1,7 +1,6 @@
 /* Page styles */
 @import url(./vendor/normalize.css);
-
-@import url(./fonts/Inter/inter.css);
+@import url(./vendor/fonts/Inter/inter.css);
 
 @import url(./variables/variables.css);
 @import url(./blocks/page/page.css);

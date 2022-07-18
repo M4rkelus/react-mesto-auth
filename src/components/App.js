@@ -36,6 +36,10 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSucceeded, setIsSucceeded] = useState(false);
 
+  const infoTooltipMessage = isSucceeded
+    ? "Вы успешно зарегистрировались!"
+    : "Что-то пошло не так! Попробуйте ещё раз.";
+
   const navigate = useNavigate();
 
   // Handlers
@@ -126,6 +130,8 @@ const App = () => {
         navigate("/");
       })
       .catch((err) => {
+        setIsSucceeded(false);
+        setIsInfoTooltipPopupOpen(true);
         console.error(`Пользователь с email не найден : (${err})`);
       });
 
@@ -134,15 +140,6 @@ const App = () => {
     setIsLoggedIn(false);
     navigate("/sign-in");
   };
-
-  useEffect(() => {
-    Promise.all([api.getUserData(), api.getInitialCards()])
-      .then(([user, initialCards]) => {
-        setCurrentUser(user);
-        setCards(initialCards);
-      })
-      .catch((err) => console.error(`Что-то пошло не так: (${err})`));
-  }, []);
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
@@ -157,6 +154,17 @@ const App = () => {
         .catch((err) => console.error(`Токен не соответствует: (${err})`));
     }
   }, [navigate]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      Promise.all([api.getUserData(), api.getInitialCards()])
+        .then(([user, initialCards]) => {
+          setCurrentUser(user);
+          setCards(initialCards);
+        })
+        .catch((err) => console.error(`Что-то пошло не так: (${err})`));
+    }
+  }, [isLoggedIn]);
 
   return (
     <div className="App">
@@ -222,6 +230,7 @@ const App = () => {
             isOpen={isInfoTooltipPopupOpen}
             onClose={closeAllPopups}
             isSucceeded={isSucceeded}
+            message={infoTooltipMessage}
           />
         </CurrentUserContext.Provider>
       </div>

@@ -1,10 +1,6 @@
 import React from "react";
 
-const InfoTooltip = ({ isOpen, onClose, isSucceeded }) => {
-  const message = isSucceeded
-    ? "Вы успешно зарегистрировались!"
-    : "Что-то пошло не так! Попробуйте ещё раз.";
-
+const InfoTooltip = ({ isOpen, onClose, isSucceeded, message }) => {
   return (
     <div className={`popup popup_tooltip ${isOpen && "popup_opened"}`}>
       <div className="popup__info">
