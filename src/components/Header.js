@@ -2,23 +2,25 @@ import { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import logo from "../images/logo.svg";
 
-const Header = ({ email, onSignOut }) => {
+const Header = ({ email, onSignOut, isLoggedIn }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const handleMenuBtnClick = () =>
     !isNavOpen ? setIsNavOpen(true) : setIsNavOpen(false);
 
   return (
     <>
-      <nav className={`${isNavOpen ? "header__nav_mobile" : "hidden "}`}>
-        <p className="header__user-email_mobile">{email}</p>
-        <NavLink
-          to="/sign-in"
-          className="header__link_mobile link"
-          onClick={onSignOut}
-        >
-          Выйти
-        </NavLink>
-      </nav>
+      {isLoggedIn && (
+        <nav className={`${isNavOpen ? "header__nav_mobile" : "hidden "}`}>
+          <p className="header__user-email_mobile">{email}</p>
+          <NavLink
+            to="/sign-in"
+            className="header__link_mobile link"
+            onClick={onSignOut}
+          >
+            Выйти
+          </NavLink>
+        </nav>
+      )}
       <header className="header">
         <img className="header__logo" src={logo} alt="Лого" />
         <Routes>

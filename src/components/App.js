@@ -170,7 +170,11 @@ const App = () => {
     <div className="App">
       <div className="page">
         <CurrentUserContext.Provider value={currentUser}>
-          <Header email={currentUserEmail} onSignOut={handleSignOut} />
+          <Header
+            email={currentUserEmail}
+            onSignOut={handleSignOut}
+            isLoggedIn={isLoggedIn}
+          />
           <Routes>
             <Route element={<ProtectedRoutes isLoggedIn={isLoggedIn} />}>
               <Route
